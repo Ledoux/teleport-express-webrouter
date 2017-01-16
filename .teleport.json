@@ -1,0 +1,25 @@
+{
+	"backend": {
+		"serversByName": {
+			"express-webrouter": {
+				"docker": {
+					"imagesByName": {
+						"current": {
+							"version": "0.1"
+						}
+					}
+				},
+				"abbreviation": "wbr",
+				"isMain": true,
+				"runsByTypeName": {
+					"localhost": {
+						"host": "localhost",
+						"port": "5000"
+					}
+				}
+			}
+		}
+	},
+	"templateNames": [
+	]
+}
