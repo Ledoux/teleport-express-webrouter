@@ -1,0 +1,7 @@
+{
+	"name": "express-webrouter",
+	"publishConfig": {
+		"registry": "https://npm-registry.corp.snips.net"
+	},
+	"version": "0.0.1"
+}
