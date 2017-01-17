@@ -1,5 +1,5 @@
 {
-	"name": "express-webrouter",
+	"name": "teleport-express-webrouter",
 	"publishConfig": {
 		"registry": "https://npm-registry.corp.snips.net"
 	},
