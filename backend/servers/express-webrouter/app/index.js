@@ -1,8 +1,10 @@
 const express = require('express')
 const path = require('path')
+const ejs = require('ejs')
 
 const app = express()
-app.set('view engine', 'ejs')
+app.set('view engine', 'html')
+app.engine('html', ejs.renderFile)
 app.use(express.static(path.join(__dirname, 'static')))
 
 const {
