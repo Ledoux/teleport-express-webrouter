@@ -2,9 +2,9 @@
 	"name": "teleport-express-webrouter",
 	"description": "Teleport nodejs express template",
   "author": "franblas",
-  "license": "MIT",	
+  "license": "MIT",
 	"publishConfig": {
 		"registry": "https://npm-registry.corp.snips.net"
 	},
-	"version": "0.0.2"
+	"version": "0.0.3"
 }
