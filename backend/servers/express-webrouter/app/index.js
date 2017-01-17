@@ -8,12 +8,15 @@ app.engine('html', ejs.renderFile)
 app.use(express.static(path.join(__dirname, 'static')))
 
 const {
- PORT
+ PORT,
+ SITE_NAME
 } = process.env
 app.set('port', (PORT || 5000))
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname, 'templates/_index'))
+  res.render(path.join(__dirname, 'templates/_index'), {
+    SITE_NAME
+  })
 })
 
 module.exports.app = app
