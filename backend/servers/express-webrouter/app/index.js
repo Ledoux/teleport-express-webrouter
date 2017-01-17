@@ -5,7 +5,7 @@ const ejs = require('ejs')
 const app = express()
 app.set('view engine', 'html')
 app.engine('html', ejs.renderFile)
-app.use(express.static(path.join(__dirname, 'static')))
+app.use(express.static(path.join(__dirname, '')))
 
 const {
  PORT,
