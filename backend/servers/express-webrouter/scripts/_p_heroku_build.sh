@@ -8,7 +8,7 @@ else
   read answer
   if echo "$answer" | grep -iq "^y" ;then
     heroku apps:destroy $[run.subDomain] --confirm $[run.subDomain];
-    heroku create --app $[run.subDomain] --buildpack heroku/python --remote $[type.name];
+    heroku create --app $[run.subDomain] --buildpack heroku/nodejs --remote $[type.name];
     heroku config:set --app $[run.subDomain] TYPE=$[type.name];
   else
     echo No
