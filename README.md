@@ -1,13 +1,8 @@
 # Teleport express webrouter
-This is a template designed for the [Teleport](https://github.com/snipsco/teleport) tool, helping you to
-build a nodejs express server.
+A [Teleport](https://github.com/snipsco/teleport) backend template to build a nodejs express server.
 
-## Requirements
-- [Teleport](https://github.com/snipsco/teleport)
-
-## Usage
-Create a new app with teleport and the `teleport-express-webrouter` template
+## How to use it
+Simply add it to the list of templates. For instance:
 ```
 tpt -c --project my-app --templates teleport-express-webrouter,teleport-heroku
 ```
-and then follow [these instructions](https://github.com/snipsco/teleport/blob/master/README.md#start-a-new-project)
