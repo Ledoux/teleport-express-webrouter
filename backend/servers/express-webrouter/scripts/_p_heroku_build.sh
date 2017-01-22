@@ -1,5 +1,9 @@
-if [[ ! $(heroku apps:info -a $[run.subDomain]) ]]; then
+if [[ ! -d ".git" ]]; then
   git init
+else
+  echo ".git has been already initiated"
+fi
+if [[ ! $(heroku apps:info -a $[run.subDomain]) ]]; then
   heroku create --app $[run.subDomain] --buildpack heroku/nodejs --remote $[type.name]
   heroku config:set --app $[run.subDomain] TYPE=$[type.name]
 else
