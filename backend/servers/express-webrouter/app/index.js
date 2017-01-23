@@ -14,7 +14,10 @@ const {
 app.set('port', (PORT || 5000))
 
 app.get('/', function (req, res) {
-  res.render(path.join(__dirname, 'templates/_index'), {
+  const indexFileName = process.env.TYPE === 'localhost'
+  ? '_dev_index.html'
+  : '_prod_index.html'
+  res.render(path.join(__dirname, `templates/${indexFileName}`), {
     SITE_NAME
   })
 })
