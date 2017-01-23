@@ -4,6 +4,7 @@ if [[ ! $(heroku apps:info -a $[run.subDomain]) ]]; then
   heroku config:set --app $[run.subDomain] TYPE=$[type.name]
 else
   if [[ ! -d ".git" ]]; then
+    git init
     heroku git:remote --app $[run.subDomain] --remote $[type.name]
   else
     echo ".git has been already initiated"
