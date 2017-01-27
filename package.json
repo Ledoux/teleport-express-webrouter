@@ -3,8 +3,5 @@
 	"description": "Teleport nodejs express template",
   "author": "franblas",
   "license": "MIT",
-	"publishConfig": {
-		"registry": "https://npm-registry.corp.snips.net"
-	},
 	"version": "0.1.0"
 }
