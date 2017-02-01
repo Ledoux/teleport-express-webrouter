@@ -1,1 +1,1 @@
-heroku ps:scale web=1 --remote $[type.name]
+heroku ps:scale web=1 --app $[run.subDomain]
