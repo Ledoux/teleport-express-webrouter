@@ -1,3 +1,60 @@
 <div id="app_div">
-  <img width='25%' height='300px' src="/static/images/nodejs.png" />
+  <style>
+    .teleport {
+      font-family: Apercu;
+      font-size: 60px;
+      font-weight: 500;
+      color: #4c4c4c;
+    }
+    .teleport__logo {
+      padding-top: 150px;
+    }
+    .teleport__logo__img {
+      width: 200px;
+      height: 200px;
+    }
+    .teleport__text__href {
+      color: #1acfff;
+      text-decoration:none;
+    }
+    .teleport__footer {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+  </style>
+  <div class="teleport center p2"/>
+    <div class="teleport__logo mb3">
+      <img class="teleport__logo__img" src="/static/images/teleport.png" />
+    </div>
+    <h2 class="mb1">
+      Welcome!
+    </h2>
+    <p class="mb3">
+      This app was made using
+      <a
+        class="teleport__text__href"
+        href="https://github.com/snipsco/teleport"
+        target="_blank"
+      >
+        Teleport
+      </a>
+    </p>
+    <div class="p2">
+      <div class="mb3">
+        The templates you chose for your apps are:
+      </div>
+      <% for(var i=0; i<templateUrls.length; i++) { %>
+       <a
+        title='<%= templateUrls[i].split('/').slice(-1)[0] %>'
+        href='<%= templateUrls[i] %>'>
+          <img src='<%= templateUrls[i] + '/' + templateUrls[i].split('/').slice(-1)[0] %>' />
+       </a>
+      <% } %>
+    </div>
+    <div class="teleport__footer">
+        Copyright Erwan & the tooling boys
+    </div>
+  </div>
 </div>
