@@ -3,5 +3,9 @@
 	"description": "Teleport nodejs express template",
   "author": "franblas",
   "license": "MIT",
-	"version": "0.1.4"
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/snipsco/teleport-express-webrouter"
+  },
+	"version": "0.1.5"
 }
