@@ -1,4 +1,5 @@
 <div id="app_div">
+  <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
   <style>
     .teleport {
       font-family: Apercu;
@@ -7,21 +8,31 @@
       color: #4c4c4c;
     }
     .teleport__logo {
-      padding-top: 150px;
+      padding-top: 125px;
     }
     .teleport__logo__img {
       width: 200px;
       height: 200px;
     }
+    .teleport__text {
+      font-size: 50px;
+    }
     .teleport__text__href {
       color: #1acfff;
       text-decoration:none;
     }
+    .teleport__templates {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .teleport__footer {
+      font-size: 25px;
       position: absolute;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
+      bottom: 30px;
     }
   </style>
   <div class="teleport center p2"/>
@@ -31,7 +42,7 @@
     <h2 class="mb1">
       Welcome!
     </h2>
-    <p class="mb3">
+    <p class="teleport__text mb3">
       This app was made using
       <a
         class="teleport__text__href"
@@ -41,20 +52,21 @@
         Teleport
       </a>
     </p>
-    <div class="p2">
-      <div class="mb3">
-        The templates you chose for your apps are:
-      </div>
-      <% for(var i=0; i<templateUrls.length; i++) { %>
-       <a
-        title='<%= templateUrls[i].split('/').slice(-1)[0] %>'
-        href='<%= templateUrls[i] %>'>
-          <img src='<%= templateUrls[i] + '/' + templateUrls[i].split('/').slice(-1)[0] %>' />
-       </a>
+    <div class="teleport__templates p2">
+      <div class="flex justify-center items-center">
+      <% for(var i=0; i<templates.length; i++) { %>
+        <div class="mr2">
+           <a
+            title='<%= templates[i].name %>'
+            href='<%= templates[i].gitUrl %>'>
+              <img src='<%= templates[i].iconUrl %>' />
+           </a>
+       </div>
       <% } %>
+      </div>
     </div>
     <div class="teleport__footer">
-        Copyright Erwan & the tooling boys
+        Copyright the Snips Tooling Team
     </div>
   </div>
 </div>

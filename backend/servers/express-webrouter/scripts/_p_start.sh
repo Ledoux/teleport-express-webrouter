@@ -1,2 +1,2 @@
 #!/bin/sh
-node scripts/manage.js
+$[manageExtraConfig] export URL=$[run.url] && node scripts/manage.js
