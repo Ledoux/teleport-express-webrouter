@@ -20,7 +20,5 @@
 			}
 		}
 	},
-	"templateNames": [
-	],
 	"iconUrl": "https://raw.githubusercontent.com/snipsco/teleport-express-webrouter/master/teleport-express-webrouter.png"
 }
