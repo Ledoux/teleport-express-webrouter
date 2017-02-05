@@ -28,11 +28,9 @@
     }
     .teleport__footer {
       font-size: 25px;
-      position: absolute;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      bottom: 30px;
     }
   </style>
   <div class="teleport center p2"/>
@@ -52,21 +50,21 @@
         Teleport
       </a>
     </p>
-    <div class="teleport__templates p2">
+    <div class="teleport__templates p2 mb3">
       <div class="flex justify-center items-center">
-      <% for(var i=0; i<templates.length; i++) { %>
-        <div class="mr2">
-           <a
-            title='<%= templates[i].name %>'
-            href='<%= templates[i].gitUrl %>'>
-              <img src='<%= templates[i].iconUrl %>' />
-           </a>
-       </div>
-      <% } %>
+        <% for(var i=0; i<teleport.templates.length; i++) { %>
+          <div class="mr2">
+             <a
+              title='<%= teleport.templates[i].name %>'
+              href='<%= teleport.templates[i].gitUrl %>'>
+                <img src='<%= teleport.templates[i].iconUrl %>' />
+             </a>
+         </div>
+        <% } %>
       </div>
     </div>
     <div class="teleport__footer">
-        Copyright the Snips Tooling Team
+        Made by the Snips Tooling Team with Love
     </div>
   </div>
 </div>
