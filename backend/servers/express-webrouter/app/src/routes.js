@@ -14,10 +14,10 @@ export function routesWithApp(app) {
   // we try to get the teleport object that
   // gives the global config of the whole app
   // and we feed the context of the render with that
-  const teleport = app.get('teleport') || {}
+  const TELEPORT_WELCOME = app.get('TELEPORT_WELCOME') || {}
   const context = {
     SITE_NAME,
-    teleport
+    TELEPORT_WELCOME
   }
 
   // home route

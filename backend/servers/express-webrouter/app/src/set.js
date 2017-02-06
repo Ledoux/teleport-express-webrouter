@@ -9,9 +9,9 @@ export function setWithApp(app) {
 
   app.set('port', (PORT || 5000))
 
-  const teleportDir = path.join(__dirname, '../../config/teleport.json')
+  const teleportDir = path.join(__dirname, '../../config/teleport_welcome.json')
   if (fs.existsSync(teleportDir)) {
-    const teleport = JSON.parse(fs.readFileSync(teleportDir))
-    app.set('teleport', teleport)
+    const TELEPORT_WELCOME = JSON.parse(fs.readFileSync(teleportDir))
+    app.set('TELEPORT_WELCOME', TELEPORT_WELCOME)
   }
 }
