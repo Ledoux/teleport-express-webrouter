@@ -15,7 +15,7 @@ export function routesWithApp(app) {
   // gives the global config of the whole app
   // and we feed the context of the render with that
   const TELEPORT_WELCOME = app.get('TELEPORT_WELCOME') || {}
-  const TELEPORT_WELCOME_STRING = JSON.stringify(TELEPORT_WELCOME)
+  const TELEPORT_WELCOME_STRING = `'${JSON.stringify(TELEPORT_WELCOME)}'`
   const context = {
     SITE_NAME,
     TELEPORT_WELCOME,
