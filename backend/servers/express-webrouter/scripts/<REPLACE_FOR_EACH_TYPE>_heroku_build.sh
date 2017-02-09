@@ -1,7 +1,11 @@
 if [[ ! $(heroku apps:info -a $[run.subDomain]) ]]; then
   git init
   heroku create --app $[run.subDomain] --buildpack heroku/nodejs --remote $[type.name]
+  heroku config:set --app $[run.subDomain] SERVER=$[server.name]
+  heroku config:set --app $[run.subDomain] SITE_NAME=$[backend.siteName]
+  heroku config:set --app $[run.subDomain] TAG=$[server.tag]
   heroku config:set --app $[run.subDomain] TYPE=$[type.name]
+  heroku config:set --app $[run.subDomain] URL=$[run.url]
 else
   if [[ ! -d ".git" ]]; then
     git init
