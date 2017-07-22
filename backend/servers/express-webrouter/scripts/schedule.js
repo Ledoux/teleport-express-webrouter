@@ -2,12 +2,16 @@
 const CronJob = require('cron').CronJob
 
 //OnInterval
+/*
+>>>>>>> origin/development-type
 function threeSecondInterval () {
   console.log("Another 3 seconds have gone by. What did you do in them?")
 }
 setInterval(threeSecondInterval, 3000)
+*/
 
 //For specific times, use a chron job
+/*
 function fifteenSeconsAfterMinute () {
   console.log("Another minute is gone forever. Hopefully, you made the most of it...")
 }
@@ -17,3 +21,4 @@ new CronJob({
   start: true,
   timeZone: "America/Los_Angeles"
 })
+*/

@@ -12,7 +12,10 @@ const { SITE_NAME } = process.env
 if (IS_LOCALHOST) {
   const env = require('node-env-file')
   const type = process.env.TYPE || 'development'
-  env(`${__dirname}/../scripts/${type}_localhost_secret.sh`)
+  const fileDir = `${__dirname}/../scripts/${type}_secret.sh`
+  if (fs.existsSync(fileDir)) {
+    env(fileDir)
+  }
 }
 
 function getSetup() {
