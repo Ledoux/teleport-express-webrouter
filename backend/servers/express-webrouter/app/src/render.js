@@ -10,7 +10,7 @@ const packageConfig = JSON.parse(
     .toString('utf-8')
 )
 const { SITE_NAME } = process.env
-let TELEPORT_WELCOME
+let TELEPORT_WELCOME = {}
 const teleportDir = path.join(__dirname, '../../config/teleport_welcome.json')
 if (fs.existsSync(teleportDir)) {
   TELEPORT_WELCOME = JSON.parse(fs.readFileSync(teleportDir))
@@ -46,6 +46,7 @@ export function useRender(app, config = {}) {
     // update the context
     app.set('context', Object.assign(app.get('context') || {}, {
       SITE_NAME,
+      TELEPORT_WELCOME,
       TELEPORT_WELCOME_STRING
     }, extraContext))
     // render
