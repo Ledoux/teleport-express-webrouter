@@ -19,7 +19,7 @@ const TELEPORT_WELCOME_STRING = `'${JSON.stringify(TELEPORT_WELCOME)}'`
 
 export function useRender(app, config = {}) {
   // unpack
-  let extraContext = config.extraContext || {}
+  const getExtraContext = config.getExtraContext
   // set render
   app.set('view engine', 'html')
   app.engine('html', ejs.renderFile)
@@ -37,16 +37,13 @@ export function useRender(app, config = {}) {
       : req.originalUrl)
       // remove also the first slash
       indexFileName = `_${pageName.slice(1)}_index.html`
-      console.log('indexFileName', indexFileName)
       if (!fs.existsSync(path.join(__dirname, `../templates/${indexFileName}`))) {
         indexFileName = '_prod_index.html'
       }
     }
     indexFileDir = path.join(__dirname, `../templates/${indexFileName}`)
     // set the extraContext
-    if (typeof extraContext === 'function') {
-      extraContext = extraContext(req, res)
-    }
+    const extraContext = getExtraContext(req, res)
     // update the context
     app.set('context', Object.assign(app.get('context') || {}, {
       SITE_NAME,
@@ -54,7 +51,6 @@ export function useRender(app, config = {}) {
       TELEPORT_WELCOME_STRING
     }, extraContext))
     // render
-    console.log('indexFileDir', indexFileDir)
     res.render(indexFileDir, app.get('context'))
   })
 }
