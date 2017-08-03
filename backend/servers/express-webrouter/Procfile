@@ -1,1 +1,2 @@
-web: sh scripts/start.sh
+web: sh scripts/start_web.sh
+clock: sh scripts/start_clock.sh
