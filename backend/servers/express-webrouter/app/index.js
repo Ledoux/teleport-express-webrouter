@@ -1,5 +1,6 @@
 require('babel-polyfill')
 const express = require('express')
+const fs = require('fs')
 const http = require('http')
 
 const { IS_LOCALHOST } = require('./lib/config')
