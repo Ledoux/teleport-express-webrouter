@@ -51,7 +51,6 @@ export function useRender(app, config = {}) {
       TELEPORT_WELCOME_STRING
     }, extraContext))
     // render
-    console.log('indexFileDir', indexFileDir)
     res.render(indexFileDir, app.get('context'))
   })
 }
