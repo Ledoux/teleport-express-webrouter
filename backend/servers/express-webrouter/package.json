@@ -13,10 +13,10 @@
   },
   "scripts": {
     "compile-babel": "babel --presets latest -d app/lib/ app/src/",
-		"compile-sprite": "svg-sprite -d --di --defs-dest=app/templates --ds _svgs.html icons/*.svg",
-    "compile": "concurrently \"npm run compile-babel\" \"npm run compile-sprite\"",
-		"dev": "concurrently \"npm run dev-start\" \"npm run dev-watch\"",
-		"dev-start": "npm run compile && nodemon --watch app/lib --watch app/index.js --exec \"node scripts/manage.js\"",
-		"dev-watch": "nodemon --watch app/src --exec \"npm run compile\""
+    "compile-icons": "svg-sprite -d --di --defs-dest=app/templates --ds _svgs.html icons/*.svg",
+    "compile": "concurrently \"npm run compile-babel\" \"npm run compile-icons\"",
+    "dev": "concurrently \"npm run dev-start\" \"npm run dev-watch\"",
+    "dev-start": "npm run compile && nodemon --watch app/lib --watch app/index.js --exec \"node scripts/manage.js\"",
+    "dev-watch": "nodemon --watch app/src --exec \"npm run compile\""
 	}
 }
