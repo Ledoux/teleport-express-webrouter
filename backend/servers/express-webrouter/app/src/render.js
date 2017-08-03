@@ -18,6 +18,8 @@ if (fs.existsSync(teleportDir)) {
 const TELEPORT_WELCOME_STRING = `'${JSON.stringify(TELEPORT_WELCOME)}'`
 
 export function useRender(app, config = {}) {
+  // unpack
+  const getExtraContext = config.getExtraContext
   // set render
   app.set('view engine', 'html')
   app.engine('html', ejs.renderFile)
