@@ -37,7 +37,6 @@ export function useRender(app, config = {}) {
       : req.originalUrl)
       // remove also the first slash
       indexFileName = `_${pageName.slice(1)}_index.html`
-      console.log('indexFileName', indexFileName)
       if (!fs.existsSync(path.join(__dirname, `../templates/${indexFileName}`))) {
         indexFileName = '_prod_index.html'
       }
