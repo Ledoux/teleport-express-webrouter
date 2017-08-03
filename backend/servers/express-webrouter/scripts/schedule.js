@@ -3,9 +3,9 @@ const CronJob = require('cron').CronJob
 
 //OnInterval
 function threeSecondInterval () {
-  console.log("Another 3 seconds have gone by. What did you do in them?")
+  console.log("Another 60 seconds have gone by. What did you do in them?")
 }
-setInterval(threeSecondInterval, 3000)
+setInterval(threeSecondInterval, 60000)
 
 //For specific times, use a chron job
 function fifteenSeconsAfterMinute () {
