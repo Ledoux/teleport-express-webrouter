@@ -24,8 +24,6 @@ export function useRender(app, config = {}) {
   app.use(express.static(path.join(__dirname, '../')))
   // use
   app.use('/', (req, res) => {
-    //
-    let extraContext = config.extraContext || {}
     // choose the correct html entry point
     let indexFileName
     let indexFileDir
