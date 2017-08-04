@@ -3,7 +3,7 @@ import ejs from 'ejs'
 import fs from 'fs'
 import path from 'path'
 
-import { IS_DEV } from './config'
+import { IS_DEVELOPMENT } from './config'
 
 const packageConfig = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../../package.json'))
@@ -29,7 +29,7 @@ export function useRender(app, config = {}) {
     // choose the correct html entry point
     let indexFileName
     let indexFileDir
-    if (IS_DEV) {
+    if (IS_DEVELOPMENT) {
       indexFileName = '_dev_index.html'
     } else {
       const pageName = (req.originalUrl === '/'
