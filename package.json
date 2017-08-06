@@ -1,5 +1,5 @@
 {
-	"name": "teleport-express-webrouter-rc",
+	"name": "teleport-express-webrouter",
 	"description": "Teleport nodejs express template",
   "author": "franblas",
   "license": "MIT",
@@ -7,5 +7,5 @@
     "type": "git",
     "url": "https://github.com/snipsco/teleport-express-webrouter"
   },
-	"version": "0.3.11"
+	"version": "0.3.0"
 }
