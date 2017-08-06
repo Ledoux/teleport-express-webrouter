@@ -6,6 +6,9 @@ if [[ ! $(heroku apps:info -a $[run.subDomain]) ]]; then
   heroku config:set --app $[run.subDomain] TAG=$[server.tag]
   heroku config:set --app $[run.subDomain] TYPE=$[type.name]
   heroku config:set --app $[run.subDomain] URL=$[run.url]
+  if [[ ! -d "./scripts/$[type.name]_secret.sh" ]]; then
+    TYPE=$[type.name] && sh scripts/set_secret.sh
+  fi
 else
   if [[ ! -d ".git" ]]; then
     git init
