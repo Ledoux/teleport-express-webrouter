@@ -26,6 +26,6 @@
     "sandbox": "npm run sandbox-start",
 		"sandbox-start": "concurrently \"npm run sandbox-start-web\" \"npm run sandbox-start-clock\"",
 		"sandbox-start-clock": "node scripts/schedule.js",
-		"sandbox-start-web": "npm run compile && \"node scripts/manage.js\""
+		"sandbox-start-web": "npm run compile && node scripts/manage.js"
   }
 }

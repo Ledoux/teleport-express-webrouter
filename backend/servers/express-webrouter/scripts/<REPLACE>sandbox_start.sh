@@ -1,2 +1,2 @@
 #!/bin/sh
-$[manageExtraConfig] export URL=$[run.url] && export TYPE=$TYPE && npm run sandbox
+_TYPE=$TYPE && $[manageExtraConfig] export URL=$[run.url] && export TYPE=$_TYPE && npm run sandbox
