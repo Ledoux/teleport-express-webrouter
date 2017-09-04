@@ -1,1 +1,5 @@
-awk '{print "heroku config:set --app $TYPE-reval2 "$0";"}' scripts/"$TYPE"_secret.sh | xargs -0 bash -c
+if [ $TYPE = 'production' ]; then
+  awk '{print "heroku config:set --app $[backend.siteName] "$0";"}' scripts/"$TYPE"_secret.sh | xargs -0 bash -c;
+else
+  awk '{print "heroku config:set --app $TYPE-$[backend.siteName] "$0";"}' scripts/"$TYPE"_secret.sh | xargs -0 bash -c;
+fi
