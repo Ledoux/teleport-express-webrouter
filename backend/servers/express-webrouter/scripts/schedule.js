@@ -2,18 +2,23 @@
 const CronJob = require('cron').CronJob
 
 //OnInterval
-function threeSecondInterval () {
-  console.log("Another 60 seconds have gone by. What did you do in them?")
+function dayInterval () {
+  console.log("Another day is gone by. What did you do in them?")
 }
-setInterval(threeSecondInterval, 60000)
+setInterval(dayInterval, 60000*60*24)
 
 //For specific times, use a chron job
-function fifteenSeconsAfterMinute () {
-  console.log("Another minute is gone forever. Hopefully, you made the most of it...")
+function everyWeekDayTick () {
+  console.log("Another weekday is gone forever. Hopefully, you made the most of it...")
 }
 new CronJob({
-  cronTime: "15 * * * * *", //15 seconds after every minute
-  onTick: fifteenSeconsAfterMinute,
+  cronTime: '00 30 11 * * 1-5',
+  /*
+   * Runs every weekday (Monday through Friday)
+   * at 11:30:00 AM. It does not run on Saturday
+   * or Sunday.
+   */
+  onTick: everyWeekDayTick,
   start: true,
   timeZone: "America/Los_Angeles"
 })
