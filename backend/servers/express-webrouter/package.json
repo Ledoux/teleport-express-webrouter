@@ -7,7 +7,7 @@
     "babel-preset-latest": "6.22.0",
     "concurrently": "^3.1.0",
     "cron": "^1.2.1",
-    "ejs": "^1.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.14.0",
     "helmet": "^3.4.1",
     "nodemon": "^1.11.0",
@@ -24,8 +24,8 @@
     "dev-start-web": "npm run compile && nodemon --watch app/lib --watch app/index.js --exec \"node scripts/manage.js\"",
     "dev-watch": "nodemon --watch app/src --exec \"npm run compile\"",
     "sandbox": "npm run sandbox-start",
-		"sandbox-start": "concurrently \"npm run sandbox-start-web\" \"npm run sandbox-start-clock\"",
-		"sandbox-start-clock": "node scripts/schedule.js",
-		"sandbox-start-web": "npm run compile && node scripts/manage.js"
+    "sandbox-start": "concurrently \"npm run sandbox-start-web\" \"npm run sandbox-start-clock\"",
+    "sandbox-start-clock": "node scripts/schedule.js",
+    "sandbox-start-web": "npm run compile && node scripts/manage.js"
   }
 }
