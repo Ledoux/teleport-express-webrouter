@@ -51,9 +51,6 @@
     }
     .teleport__templates__img {
       width: 50px;
-      @media (min-width: 768px) {
-        width: 50px;
-      }
     }
     .teleport__footer {
       font-size: 20px;
@@ -82,10 +79,10 @@
         Teleport
       </a>
     </div>
-    <div class="teleport__templates p2 mb3">
+    <div class="teleport__templates p1 mb3">
       <div class="flex justify-center items-center">
         <% for(var i=0; i<TELEPORT_WELCOME.templates.length; i++) { %>
-          <div class="mr2">
+          <div class="mr1">
              <a
               title='<%= TELEPORT_WELCOME.templates[i].name %>'
               href='<%= TELEPORT_WELCOME.templates[i].gitUrl %>'>

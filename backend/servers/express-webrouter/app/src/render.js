@@ -9,7 +9,7 @@ const packageConfig = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../../package.json'))
     .toString('utf-8')
 )
-const { TRACKING_ID, SITE_NAME } = process.env
+const { SITE_LABEL } = process.env
 let TELEPORT_WELCOME = {}
 const teleportDir = path.join(__dirname, '../../config/teleport_welcome.json')
 if (fs.existsSync(teleportDir)) {
@@ -19,7 +19,7 @@ const TELEPORT_WELCOME_STRING = `'${JSON.stringify(TELEPORT_WELCOME)}'`
 
 export function useRender(app, config = {}) {
   // unpack
-  const getExtraContext = config.getExtraContext
+  const getExtraConfig = config.getExtraConfig
   // set render
   app.set('view engine', 'html')
   app.engine('html', ejs.renderFile)
@@ -43,15 +43,14 @@ export function useRender(app, config = {}) {
     }
     indexFileDir = path.join(__dirname, `../templates/${indexFileName}`)
     // set the extraContext
-    const extraContext = (getExtraContext && getExtraContext(req, res)) || config.extraContext || {}
+    const extraConfig = (getExtraConfig && getExtraConfig(req, res)) || config.extraContext || {}
     // update the context
-    app.set('context', Object.assign(app.get('context') || {}, {
-      SITE_NAME,
+    app.set('config', Object.assign(app.get('config') || {}, {
+      SITE_LABEL,
       TELEPORT_WELCOME,
-      TELEPORT_WELCOME_STRING,
-      TRACKING_ID
-    }, extraContext))
+      TELEPORT_WELCOME_STRING
+    }, extraConfig))
     // render
-    res.render(indexFileDir, app.get('context'))
+    res.render(indexFileDir, app.get('config'))
   })
 }

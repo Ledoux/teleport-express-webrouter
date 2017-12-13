@@ -30,9 +30,7 @@ function getSetup() {
     }))
     // it is important to put all the apis uses before this useRender
     useRender(app, {
-      extraContext: {
-        SITE_NAME
-      }
+      getExtraConfig: req => ({ SITE_NAME })
     })
     const server = http.Server(app)
     resolve({ app,
