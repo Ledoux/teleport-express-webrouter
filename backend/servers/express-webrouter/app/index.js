@@ -6,7 +6,7 @@ const http = require('http')
 const { IS_LOCALHOST } = require('./lib/config')
 const { useRender } = require('./lib/render')
 
-const { SITE_NAME } = process.env
+const { SITE_NAME, TRACKING_ID } = process.env
 
 // in localhost condition we need to import
 // the secret values from a secret script
@@ -30,7 +30,7 @@ function getSetup() {
     }))
     // it is important to put all the apis uses before this useRender
     useRender(app, {
-      getExtraConfig: req => ({ SITE_NAME })
+      getExtraConfig: req => ({ SITE_NAME, TRACKING_ID })
     })
     const server = http.Server(app)
     resolve({ app,
